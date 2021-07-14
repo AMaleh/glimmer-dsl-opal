@@ -50,7 +50,15 @@ namespace :build do
 end
 
 # Rake::Task["build"].enhance [:no_puts_debuggerer, :spec] #TODO enable once opal specs are running
-task :default do
+task :opal do
   puts "To run opal specs, visit: http://localhost:9292 "
   system `rackup`
 end
+
+begin
+  require 'rspec/core/rake_task'
+  RSpec::Core::RakeTask.new(:spec)
+rescue LoadError
+end
+
+task :default => :spec

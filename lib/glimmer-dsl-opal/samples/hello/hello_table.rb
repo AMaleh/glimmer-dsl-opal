@@ -245,7 +245,7 @@ class HelloTable
         }
         
         # Data-bind table items (rows) to a model collection property, specifying column properties ordering per nested model
-        items <=> [BaseballGame, :schedule, column_attributes: [:game_date, :game_time, :ballpark, :home_team, :away_team, :promotion]]
+        items <=> [BaseballGame, :schedule, column_properties: [:game_date, :game_time, :ballpark, :home_team, :away_team, :promotion]]
         
         # Data-bind table selection
         selection <=> [BaseballGame, :selected_game]

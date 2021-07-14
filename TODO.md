@@ -7,6 +7,14 @@ Here is a list of tasks to do (moved to CHANGELOG.md once done).
 ## Soon
 
 - Whitelist images exposed online for download
+- Have image paths auto-corrected to web paths using File.join too (in case File.expand_path wasn't used)
+- Have image/background_image properties also perform conversion
+
+- Support File.join expansion similar to expand_path for cases where expand_path is called first and then File.join is used afterwards.
+- Handle the case of File.expand_path with paths having '../' or './' with other path segments (by trimming the dots out) or dots only (by keeping them)
+
+- Support ActiveStorage & CarrierWave in the future for exposing downloadable images
+- Support a rake task for pre-uploading downloadable images
 
 - Support exposing images to use as a composite background_image or shell image attribute as per those details:
   - glimmer-dsl-opal Rails engine server: Derive image paths from available assets by providing a controller action and route for it (glimmer_dsl_opal_image_paths)
